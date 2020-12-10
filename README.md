@@ -8,3 +8,6 @@ npm i vue3-focus
 ```
 
 ## 用法
+```javascript
+import vue3Focus from 'vue-focus'
+```
