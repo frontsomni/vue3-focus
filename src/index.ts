@@ -1,4 +1,7 @@
-const onMounted = (el: HTMLInputElement, binding) => {
+interface IBinding {
+  [key: string]: any
+}
+const onMounted = (el: HTMLInputElement, binding: IBinding) => {
   if (binding.value) {
     el.focus()
   } else {
@@ -6,7 +9,7 @@ const onMounted = (el: HTMLInputElement, binding) => {
   }
 }
 
-const onUpdated = (el: HTMLInputElement, binding) => {
+const onUpdated = (el: HTMLInputElement, binding: IBinding) => {
   if (binding.modifiers.lazy) {
     if (Boolean(binding.value) === Boolean(binding.oldValue)) {
       return
