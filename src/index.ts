@@ -1,4 +1,4 @@
-const onMounted = (el, binding) => {
+const onMounted = (el: HTMLInputElement, binding) => {
   if (binding.value) {
     el.focus()
   } else {
