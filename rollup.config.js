@@ -12,10 +12,6 @@ const config = {
     file: `lib/vue-focus.cjs.js`,
     format: 'cjs',
   },
-  // output: {
-  //   file: `lib/vue-focus.esm.js`,
-  //   format: 'esm',
-  // },
   plugins: [
     json(),
     typescript({
