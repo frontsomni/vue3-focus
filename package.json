@@ -1,6 +1,6 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.14",
+  "version": "0.0.15",
   "description": "vue 3.0 focus directive",
   "main": "lib/vue-focus.cjs.js",
   "module": "lib/vue.focus.esm.js",
