@@ -13,8 +13,11 @@ const onUpdated = (el: HTMLInputElement, binding) => {
     }
   }
 
-  if (binding.value) el.focus();
-  else el.blur();
+  if (binding.value) {
+    el.focus()
+  } else {
+    el.blur()
+  }
 }
 
 const direcctive = {
