@@ -6,7 +6,7 @@ const onMounted = (el: HTMLInputElement, binding) => {
   }
 }
 
-const onUpdated = (el, binding) => {
+const onUpdated = (el: HTMLInputElement, binding) => {
   if (binding.modifiers.lazy) {
     if (Boolean(binding.value) === Boolean(binding.oldValue)) {
       return
