@@ -29,18 +29,10 @@ async function build(format = 'esm', minify = false) {
         tsconfig: 'tsconfig.json'
       }),
       getBabelOutputPlugin(babelConfig),
-      copy({
-        flatten: false,
-        copyOnce: true,
-        targets: [{
-          src: 'types',
-          dest: 'lib'
-        }]
-      }),
     ]
   }
   const outputOpt = {
-    file: `lib/vue-focus-${version}.${format}${minify ? '.min' : ''}.js`,
+    file: `lib/vue-focus.${format}${minify ? '.min' : ''}.js`,
     format,
   }
   if (format === 'iife' || format === 'umd') {

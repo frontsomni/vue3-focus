@@ -1,9 +1,9 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "vue 3.0 focus directive",
-  "main": "lib/vue-focus.cjs.js",
-  "module": "lib/vue.focus.esm.js",
+  "main": "lib/vue-focus.cjs.min.js",
+  "module": "lib/vue.focus.esm.min.js",
   "types": "lib/types/index.d.ts",
   "typeing": "lib/types/index.d.ts",
   "files": [
@@ -17,8 +17,7 @@
     "url": "https://github.com/yuelau/vue3-focus"
   },
   "scripts": {
-    "dev": "rollup -c rollup.config.js -w",
-    "build": "rollup -c rollup.config.js"
+    "build": "node build.js"
   },
   "keywords": [
     "vue",
