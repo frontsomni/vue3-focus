@@ -1,6 +1,8 @@
+// import Vue from 'vue'
 interface IBinding {
   [key: string]: any
 }
+
 const onMounted = (el: HTMLInputElement, binding: IBinding) => {
   if (binding.value) {
     el.focus()
@@ -23,13 +25,7 @@ const onUpdated = (el: HTMLInputElement, binding: IBinding) => {
   }
 }
 
-const direcctive = {
+export const vue3Focus = {
   mounted: onMounted,
   updated: onUpdated
-}
-
-export default direcctive
-
-export {
-  direcctive as VueFocusDirective
 }

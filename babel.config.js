@@ -1,5 +1,6 @@
 const config = {
-  babelHelpers: 'bundled'
+  babelHelpers: 'bundled',
+  exclude: 'node_modules/**'
 }
 
-export default config
+module.exports = config

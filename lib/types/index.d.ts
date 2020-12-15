@@ -1,5 +1,5 @@
-import { Plugin } from "vue";
+import { Plugin } from "vue"
 
-declare const VueFocusDirective: Plugin;
+declare const vue3Focus: Plugin
 
-export default VueFocusDirective;
+export default vue3Focus
