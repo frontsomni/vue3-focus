@@ -1,9 +1,6 @@
-// import Vue from 'vue'
-interface IBinding {
-  [key: string]: any
-}
+import {DirectiveBinding, Directive} from 'vue'
 
-const onMounted = (el: HTMLInputElement, binding: IBinding) => {
+const onMounted = (el: HTMLInputElement, binding: DirectiveBinding) => {
   if (binding.value) {
     el.focus()
   } else {
@@ -11,7 +8,7 @@ const onMounted = (el: HTMLInputElement, binding: IBinding) => {
   }
 }
 
-const onUpdated = (el: HTMLInputElement, binding: IBinding) => {
+const onUpdated = (el: HTMLInputElement, binding: DirectiveBinding) => {
   if (binding.modifiers.lazy) {
     if (Boolean(binding.value) === Boolean(binding.oldValue)) {
       return
@@ -25,7 +22,7 @@ const onUpdated = (el: HTMLInputElement, binding: IBinding) => {
   }
 }
 
-export const vue3Focus = {
+export const vue3Focus: Directive = {
   mounted: onMounted,
   updated: onUpdated
 }

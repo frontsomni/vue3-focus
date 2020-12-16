@@ -1,6 +1,6 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "vue 3.0 focus directive",
   "main": "lib/vue-focus.cjs.min.js",
   "module": "lib/vue.focus.esm.min.js",
@@ -50,5 +50,7 @@
   "peerDependencies": {
     "vue": "^3.0.4"
   },
-  "dependencies": {}
+  "dependencies": {
+    "vue": "^3.0.4"
+  }
 }

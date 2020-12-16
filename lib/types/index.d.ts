@@ -1,3 +1,3 @@
-import { Plugin } from "vue"
+import { Directive } from "vue"
 
-export const vue3Focus: Plugin
+export const vue3Focus: Directive
