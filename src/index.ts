@@ -14,7 +14,6 @@ const onUpdated = (el: HTMLInputElement, binding: DirectiveBinding) => {
       return
     }
   }
-
   if (binding.value) {
     el.focus()
   } else {

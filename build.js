@@ -1,29 +1,38 @@
 const rollup = require('rollup')
-const commonjs = require('@rollup/plugin-commonjs')
 const typescript = require('@rollup/plugin-typescript')
-const copy = require('rollup-plugin-copy')
 const json = require('@rollup/plugin-json')
 const {babel, getBabelOutputPlugin} = require('@rollup/plugin-babel')
+const fse = require('fs-extra')
 const babelConfig = require('./babel.config.js')
 const pkg = require('./package.json')
 
 const {version} = pkg
+const pluginName = 'vue3Focus'
+
+async function copyFilesAfterRemoveFiles() {
+  try {
+    await fse.remove('lib/*')
+    await fse.copy('types', 'lib/types')
+  } catch(e) {
+    console.log(e)
+  }
+}
 
 async function build(format = 'esm', minify = false) {
   const babelConfig = {
-    presets: ["minify"],
+    presets: ['minify'],
     allowAllFormats: true,
   }
   if (minify) {
-    babelConfig.presets = ["minify"]
+    babelConfig.presets = ['minify']
   } else {
-    delete babelConfig.presets
+    delete delete babelConfig.presets
   }
+
   const inputOpt = {
     input: 'src/index.ts',
     external: ['vue'],
     plugins: [
-      commonjs(),
       json(),
       typescript({
         tsconfig: 'tsconfig.json'
@@ -36,16 +45,15 @@ async function build(format = 'esm', minify = false) {
     format,
   }
   if (format === 'iife' || format === 'umd') {
-    outputOpt.name = 'vue3Focus'
-  } else {
-    delete outputOpt.name
+    outputOpt.name = pluginName
   }
   const bundle = await rollup.rollup(inputOpt)
   await bundle.generate(outputOpt)
   bundle.write(outputOpt)
 }
 
-Promise.all([
+copyFilesAfterRemoveFiles()
+const tasks = [
   build('esm'),
   build('cjs'),
   build('iife'),
@@ -56,6 +64,9 @@ Promise.all([
   build('iife', true),
   build('umd', true),
   build('amd', true)
-]).catch(e => {
+]
+
+Promise.all(tasks)
+.catch(e => {
   console.log(e)
 })
