@@ -2,8 +2,7 @@ name: npm-publish
 on:
   push:
     branches:
-      tags:
-      - 'v*.*.*'
+      - main # Change this to your default branch
 jobs:
   npm-publish:
     name: npm-publish
