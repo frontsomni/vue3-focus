@@ -1,6 +1,6 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.32",
+  "version": "0.0.33",
   "description": "vue 3.0 focus directive",
   "main": "dist/vue3-focus.cjs.min.js",
   "module": "dist/vue3.focus.esm.min.js",
