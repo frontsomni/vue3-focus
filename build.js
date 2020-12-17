@@ -8,15 +8,8 @@ const pkg = require('./package.json')
 
 const {version} = pkg
 const pluginName = 'vue3Focus'
-
-async function copyFilesAfterRemoveFiles() {
-  try {
-    await fse.remove('lib/*')
-    await fse.copy('types', 'lib/types')
-  } catch(e) {
-    console.log(e)
-  }
-}
+const args = process.argv.slice(2)
+const destName = args[0] || 'lib'
 
 async function build(format = 'esm', minify = false) {
   const babelConfig = {
@@ -41,7 +34,7 @@ async function build(format = 'esm', minify = false) {
     ]
   }
   const outputOpt = {
-    file: `lib/vue-focus.${format}${minify ? '.min' : ''}.js`,
+    file: `${destName}/vue3-focus.${format}${minify ? '.min' : ''}.js`,
     format,
   }
   if (format === 'iife' || format === 'umd') {
@@ -52,7 +45,7 @@ async function build(format = 'esm', minify = false) {
   bundle.write(outputOpt)
 }
 
-copyFilesAfterRemoveFiles()
+
 const tasks = [
   build('esm'),
   build('cjs'),
@@ -66,7 +59,32 @@ const tasks = [
   build('amd', true)
 ]
 
-Promise.all(tasks)
-.catch(e => {
-  console.log(e)
-})
+async function generateFiles() {
+  try {
+    await fse.emptyDir(destName)
+    await fse.copy('types', `${destName}/types`)
+    const tasks = [
+      build('esm'),
+      build('cjs'),
+      build('iife'),
+      build('umd'),
+      build('amd'),
+      build('esm', true),
+      build('cjs', true),
+      build('iife', true),
+      build('umd', true),
+      build('amd', true)
+    ]
+
+    Promise.all(tasks)
+    .catch(e => {
+      console.log(e)
+    })
+
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+
+generateFiles()

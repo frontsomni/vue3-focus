@@ -1,9 +1,10 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.24",
+  "version": "0.0.25",
   "description": "vue 3.0 focus directive",
-  "main": "lib/vue-focus.cjs.min.js",
-  "module": "lib/vue.focus.esm.min.js",
+  "main": "lib/vue3-focus.cjs.min.js",
+  "module": "lib/vue3.focus.esm.min.js",
+  "unpkg": "lib/vue3-focus.umd.min.js",
   "types": "lib/types/index.d.ts",
   "typeing": "lib/types/index.d.ts",
   "files": [
@@ -17,7 +18,8 @@
     "url": "https://github.com/yuelau/vue3-focus"
   },
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "test": "node build.js test"
   },
   "keywords": [
     "vue",
