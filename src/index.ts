@@ -6,7 +6,7 @@ const onMounted = (el: HTMLInputElement, binding: DirectiveBinding) => {
   } else {
     el.blur();
   }
-};
+}
 const onUpdated = (el: HTMLInputElement, binding: DirectiveBinding) => {
   if (binding.modifiers.lazy) {
     if (Boolean(binding.value) === Boolean(binding.oldValue)) {
