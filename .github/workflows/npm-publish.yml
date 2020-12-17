@@ -11,10 +11,17 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Set node version
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+        registry-url: https://registry.npmjs.org/
+
     - name: Install and Build
       run: |
         npm install
         npm run build
+        npm run doc
 
     - name: Publish if version has been updated
       uses: pascalgn/npm-publish-action@1.3.5

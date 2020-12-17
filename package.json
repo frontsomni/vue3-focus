@@ -1,6 +1,6 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "vue 3.0 focus directive",
   "main": "dist/vue3-focus.cjs.min.js",
   "module": "dist/vue3.focus.esm.min.js",
@@ -21,7 +21,7 @@
   "scripts": {
     "build": "node build.js",
     "test": "node build.js test",
-    "doc": "node scripts/gen-log.js"
+    "doc": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
   },
   "keywords": [
     "vue",
@@ -56,7 +56,7 @@
     "@typescript-eslint/eslint-plugin": "^4.10.0",
     "@typescript-eslint/parser": "^4.10.0",
     "babel-preset-minify": "^0.5.1",
-    "conventional-changelog": "^3.1.24",
+    "conventional-changelog-cli": "^2.1.1",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-import": "^2.22.1",
