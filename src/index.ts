@@ -1,27 +1,27 @@
-import { DirectiveBinding, Directive } from 'vue';
+import { DirectiveBinding, Directive } from 'vue'
 
 const onMounted = (el: HTMLInputElement, binding: DirectiveBinding) => {
   if (binding.value) {
-    el.focus();
+    el.focus()
   } else {
-    el.blur();
+    el.blur()
   }
-};
+}
 
 const onUpdated = (el: HTMLInputElement, binding: DirectiveBinding) => {
   if (binding.modifiers.lazy) {
     if (Boolean(binding.value) === Boolean(binding.oldValue)) {
-      return;
+      return
     }
   }
   if (binding.value) {
-    el.focus();
+    el.focus()
   } else {
-    el.blur();
+    el.blur()
   }
-};
+}
 
 export const vue3Focus: Directive = {
   mounted: onMounted,
   updated: onUpdated,
-};
+}
