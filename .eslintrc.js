@@ -19,6 +19,6 @@ module.exports = {
     'no-useless-escape': 0,
     'no-empty': 2,
     "import/prefer-default-export": 0,
-    "semi": 2
+    "semi": [2, "never"]
   },
 };
