@@ -18,6 +18,6 @@ module.exports = {
     'no-console': process.env.NODE_ENV !== 'production' ? 0 : 2,
     'no-useless-escape': 0,
     'no-empty': 0,
-    "import/prefer-default-export": "off"
+    "import/prefer-default-export": 0
   },
 };
