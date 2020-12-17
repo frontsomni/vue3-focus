@@ -15,9 +15,10 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
+    'no-console': 2,
     'no-useless-escape': 0,
-    'no-empty': 0,
+    'no-empty': 2,
     "import/prefer-default-export": 0,
-    "semi": 0
+    "semi": 2
   },
 };
