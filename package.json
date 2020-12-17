@@ -30,6 +30,9 @@
     "focus",
     "vuefocus"
   ],
+  "gitHooks": {
+    "commit-msg": "node scripts/verify-commit-msg.js"
+  },
   "author": {
     "name": "yuelau",
     "email": "liuyue2077@gmail.com",
