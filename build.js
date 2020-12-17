@@ -9,7 +9,7 @@ const pkg = require('./package.json')
 const {version} = pkg
 const pluginName = 'vue3Focus'
 const args = process.argv.slice(2)
-const destName = args[0] || 'lib'
+const destName = args[0] || 'dist'
 
 async function build(format = 'esm', minify = false) {
   const babelConfig = {

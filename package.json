@@ -1,15 +1,15 @@
 {
   "name": "vue3-focus",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "description": "vue 3.0 focus directive",
-  "main": "lib/vue3-focus.cjs.min.js",
-  "module": "lib/vue3.focus.esm.min.js",
-  "unpkg": "lib/vue3-focus.umd.min.js",
-  "jsdelivr": "lib/vue3-focus.umd.min.js",
-  "types": "lib/types/index.d.ts",
-  "typeing": "lib/types/index.d.ts",
+  "main": "dist/vue3-focus.cjs.min.js",
+  "module": "dist/vue3.focus.esm.min.js",
+  "unpkg": "dist/vue3-focus.umd.min.js",
+  "jsdelivr": "dist/vue3-focus.umd.min.js",
+  "types": "dist/types/index.d.ts",
+  "typeing": "dist/types/index.d.ts",
   "files": [
-    "lib"
+    "dist"
   ],
   "bugs": {
     "url": "https://github.com/yuelau/vue3-focus/issues"
