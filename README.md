@@ -24,3 +24,8 @@ export default defineComponent({
   },
 }
 ```
+
+```html
+<!-- CDN -->
+<script src="https://unpkg.com/vue3-focus@latest/lib/vue3-focus.umd.min.js"></script>
+```
