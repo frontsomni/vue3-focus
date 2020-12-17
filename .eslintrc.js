@@ -15,7 +15,7 @@ module.exports = {
     '@typescript-eslint',
   ],
   rules: {
-    'no-console': process.env.NODE_ENV !== 'production' ? 0 : 2,
+    'no-console': 2,
     'no-useless-escape': 0,
     'no-empty': 0,
     "import/prefer-default-export": 0,
